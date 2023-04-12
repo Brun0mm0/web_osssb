@@ -1,0 +1,253 @@
+.header {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    // max-width: 1440px;
+    margin-inline: auto;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    transform: translate3d(0px, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    transition: all 0.5s;
+    z-index: 100;
+
+    
+    &__logo {
+        width: 29rem;
+        padding: 0 1rem 0 3rem;
+        display: flex;
+        align-items: center;
+        
+        @include respond(tab-land) {
+            width: 26rem;
+        }
+        @include respond(phone) {
+            padding: 2rem 1rem;
+            width: 24rem;
+        }
+        @include respond(phone-small) {
+            width: 20rem;
+        }
+        
+    }
+    
+    &__img {
+        display: flex;
+        align-items: center;
+        
+        img {
+            max-width: 100%;
+            @include respond(phone-small) {
+                padding: 0;
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    @include respond(tab-land) {
+        padding: 3rem 5rem;
+    }
+    @include respond(tab-port) {
+        justify-content: center;
+    }
+    @include respond(phone) {
+        padding: 1.5rem;
+    }
+    @include respond(phone-small) {
+        padding: 1.5rem;
+    }
+}
+
+nav {
+    
+   > ul {
+        list-style: none;
+
+        @include respond(tab-port) {
+            display: none;
+
+        }
+
+        > li {
+            position: relative;
+            float: left;
+
+            &:not(:last-child):before {
+                position: absolute;
+                top: 2rem;
+                content: '• ';
+                color: $azul-logo;
+                font-size: 2rem;
+            }
+            
+            @include respond(tab-port) {
+                float: none;
+            }
+            a, a:visited {
+                display: block;
+                text-decoration: none;
+                padding: 0 3rem;
+                line-height: 7rem;
+                &:not(:only-child):after {
+                    padding-left: 0.4rem;
+                    content: ' ▾';
+                }
+
+                @include respond(tab-land) {
+                padding: 0 1.5rem;
+                }
+            }
+
+        }
+
+        ul {
+
+            
+            li {
+                min-width: 19rem;
+                
+                a {
+                    padding: 1.5rem;
+                    line-height: 2rem;
+                    &:before {
+                        padding-right: 0.4rem;
+                        content: ' ';
+                        color: $azul-logo;
+                    }
+                }
+            }
+        } 
+        
+    }
+    @include respond(tab-port) {
+        position: absolute;
+        width: 100%;
+        top: 15rem;
+    }
+
+    @include respond(phone) {
+        top: 12rem;
+    }
+
+
+}
+
+.nav-container {
+    padding: 3rem 6rem;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bg-body;
+    border-radius: 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    @include respond(phone) {
+        padding: 0 2rem;
+    }
+    @include respond(phone-small) {
+        padding: 0;
+    }
+}
+
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 6rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: $bg-body;
+    // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transform: translate3d(0px, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateZ(0deg) skew(0deg, 0deg);
+
+    & li {
+        margin:0 0 1rem 0;
+    }
+
+    @include respond(tab-port) {
+        position: static;
+    }
+}
+
+.nav_list {
+    @include respond(tab-port) {
+        display: block !important;
+    }
+}
+
+#nav-toggle {
+    display: none;
+    position: relative;
+    cursor: pointer;
+    padding-right: 6rem;
+    
+    span,
+    span:before,
+    span:after {
+        border-radius: 2px;
+        height: 5px;
+        width: 32px;
+        background: $azul-logo;
+        cursor: pointer;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 300ms ease-in-out;
+    }
+    span:before {
+      top: -10px;
+    }
+    span:after {
+      bottom: -10px;
+    }
+    &.active span {
+      background-color: transparent;
+      &:before,
+      &:after {
+        top: 0;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    @include respond(tab-port) {
+        display: block;
+    }
+
+    
+  }
+
+  .contacto_button {
+  
+      text-align: center;
+      
+      & > a {
+          text-transform: uppercase;
+          background-color: $azul-logo;
+          border-radius: 2rem;
+          border: 0.2rem $azul-logo;
+          color: $bg-body;
+          transition: all 0.3s;
+        } 
+        
+        @include respond(tab-port) {
+            width: 16rem;
+    }
+}
+    
+    .contacto_button :hover {
+    background-color: $bg-body;
+    border-radius: 3rem;
+    border: 0.2rem $azul-logo;
+    color: $azul-logo;
+  }

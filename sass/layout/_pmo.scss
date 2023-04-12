@@ -1,0 +1,47 @@
+.pmo-listas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 6rem;
+    padding-inline: 6rem;
+    @include respond(phone) {
+        grid-template-columns: 1fr;
+        padding-inline: 3rem;
+    }
+}
+
+.pmo-listas {
+    list-style: outside;
+}
+
+.pmo-listas > li::marker {
+    font-size: 1.5rem;
+    color: $azul-logo;
+}
+
+.pmo-listas > li > p {
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.pmo-single {
+    grid-template-columns: 1fr;
+}
+
+.pmo-alfa {
+    list-style:lower-latin;
+}
+.pmo-square {
+    list-style: square;
+
+    & li::marker {
+        color: $verde-logo;
+    }
+    & p {
+        margin: 0;
+    }
+
+    @include respond(phone) {
+        padding-inline: 0;
+
+    }
+}

@@ -1,0 +1,118 @@
+footer {
+    padding: 3rem;
+    height: 100vh;
+        @include respond(phone) {
+        padding: 1.5rem;
+        height: auto;
+        }
+
+    section {
+    border-radius: 3rem;
+    height: calc(100% - 3rem);
+    background-color: $azul-logo-claro;
+    // max-width: 140rem;
+    .footer {
+        height: 100%;
+        max-width: 140rem;
+        grid-template-columns: 1fr 1fr 0.3fr;
+        display: grid;
+        margin: auto;
+        padding: 8rem;
+        gap: 4rem;
+        row-gap: 8rem;
+        bottom: 0;
+
+        @include respond(phone) {
+            max-width: 100%;
+            grid-template-columns: 1fr;
+            padding: 1.5rem;
+            gap: auto;
+
+        };
+
+        & ~ div {
+            display: grid;
+            gap: 2rem;
+            @include respond(phone-small) {
+                gap: 4rem;
+            }
+        }
+        
+        & span {
+            vertical-align: middle;  
+        }
+        
+        & #links {
+            // margin-top: 5rem;
+            grid-column: 1/3;
+            grid-row: 3;
+            
+            & div {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            @include respond(phone) {
+                padding: 7rem 2rem 0 2rem;
+                flex-direction: column;
+                gap: 7rem;
+            }
+            & img {
+                max-width: 20rem;
+                @include respond(phone) {
+                    max-width: 12rem;
+                    justify-content: space-between;
+                } 
+            }
+            
+        }
+            @include respond(tab-port) {
+                grid-column: auto;
+            }
+            
+            @include respond(phone-small) {
+                padding: 2rem;
+            }
+            
+        }
+    }
+    
+    & #copy {
+        grid-column: 1/3;
+        @include respond(phone) {
+        grid-column: auto;
+    }
+}
+
+
+
+& #logo  {
+    grid-row: 1/4;
+    grid-column: 3/4;
+    background-image: url("../imagenes/bancario-gris-vert-05.png");
+    background-position:center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    
+    @include respond(tab-port) {
+        display: none
+    };
+}
+
+@include respond(tab-port) {
+    grid-template-columns: 1fr 1fr;
+}
+@include respond(phone) {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 5rem;
+}
+
+.symbol-none {
+    @include respond(phone-small) {
+        display: none;
+    }
+}
+}
+
+}

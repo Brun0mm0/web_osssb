@@ -1,0 +1,95 @@
+
+
+.nav {
+    // max-width: 1440px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 3rem;
+    
+    @include respond(phone) {
+        padding: 0;
+    }
+    
+    &__btn {
+        cursor: pointer;
+        display: grid;
+        grid-template: 1/1;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 1px 8px -1px, rgba(0, 0, 0, 0.3) 0px 1px 5px -1px;
+        
+
+        
+        
+        &:hover {
+            box-shadow: none;
+            
+            & a > p {
+                text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        &__azul {
+            background-color: $azul-logo;
+            
+            @include respond(tab-port) {
+                border-radius:  0 0 0 3rem;
+            }
+
+            @include respond(phone) {
+                border-radius:  0;
+            }
+        }
+        &__celeste {
+            background-color: $azul-logo-claro;
+            border-radius:  0 3rem 3rem 0 ;
+
+            @include respond(tab-port) {
+                border-radius:  0 0 3rem 0 ;
+            }
+
+            @include respond(phone) {
+                border-radius:  0;
+            }
+
+            // &:hover {
+            //     box-shadow: none;
+            //     background-color: $bg-body;
+
+            //     & p {
+            //         color: $azul-logo;
+            //     }
+            // }
+        }
+        &__verde {
+            background-color: $verde-logo;
+            border-radius: 3rem 0 0 3rem;
+
+            @include respond(tab-port) {
+                border-radius: 3rem 0 0 0;
+            }
+
+            @include respond(phone) {
+                border-radius:  0;
+            }
+        }
+        &__azul-oscuro {
+            background-color: $azul-logo-oscuro;
+
+            @include respond(tab-port) {
+            border-radius: 0 3rem 0 0;
+            }
+
+            @include respond(phone) {
+                border-radius:  0;
+            }
+        }
+    }
+
+    @include respond(tab-port) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(phone) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
