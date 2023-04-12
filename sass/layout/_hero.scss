@@ -22,9 +22,11 @@
     height: 100%;
 
     &-slide {
-        
         &-item {
             height: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            ;
             max-width: 120rem;
             margin-inline: auto;
             
