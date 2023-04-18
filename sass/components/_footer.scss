@@ -52,15 +52,20 @@ footer {
             justify-content: space-around;
             align-items: center;
             @include respond(phone) {
-                padding: 7rem 2rem 0 2rem;
+                // padding: 7rem 2rem 0 2rem;
+                padding: 0;
                 flex-direction: column;
                 gap: 7rem;
+            }
+            & a {
+                text-align: center;
             }
             & img {
                 max-width: 20rem;
                 @include respond(phone) {
-                    max-width: 12rem;
+                    max-width: 80%;
                     justify-content: space-between;
+                    margin: auto;
                 } 
             }
             

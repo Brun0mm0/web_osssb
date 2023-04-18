@@ -1,5 +1,6 @@
 .hero {
     height: calc(100vh - 8rem);
+    // height: 100vh;
     padding: 0;
     padding-top: calc(100vh - calc(100vh - 19rem));
     @include respond(tab-port) {
@@ -21,6 +22,7 @@
 
     &-slide {
         &-item {
+            // padding: 4rem;
             height: 100%;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -32,6 +34,7 @@
             }
             @include respond(phone) {
                 padding: 0 3rem;
+                grid-template-columns: repeat(1, 1fr);
             }
             @include respond(phone-small) {
                 padding: 0 2rem;
@@ -43,7 +46,7 @@
             flex-direction: column;
             // height: 100%;
             justify-content: space-between;
-            padding: 6rem 0;
+            padding: 8rem 4rem;
             & h2 {
                 text-align: start;
                 color: $azul-logo;
@@ -56,14 +59,36 @@
                 font-size: 2rem;
                 text-decoration: none;
             }    
+            @include respond(phone) {
+                // padding: 0;
+                padding: 3rem 0 8rem 0;
+
+                & h2 {
+                    text-align: center;
+                    font-size: 3.5rem;
+                } 
+
+                // grid-column: 1/3;
+                // grid-row: 1;
+            }
         }
         &-imagen {
+
             display: flex;
             align-items: center;
+            padding: 0 4rem;
+            height: 100%;
 
             & img {
                 max-width: 100%;
+                margin: auto;
             }
+            @include respond(phone) {
+                display: none;
+                // grid-column: 1/3;
+                // grid-row: 1;
+            }
+
         }
     }
 }

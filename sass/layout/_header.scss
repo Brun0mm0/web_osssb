@@ -173,6 +173,14 @@ nav {
     @include respond(tab-port) {
         position: static;
     }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        color: $bg-body;
+    }
 }
 
 .nav_list {
