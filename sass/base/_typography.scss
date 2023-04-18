@@ -234,18 +234,46 @@ footer span,i {
                 color: $azul-logo;
             }
             & h3 {
+                font-size: 3rem;
+                font-family: urbane, sans-serif;
                 text-transform: capitalize;
                 margin-bottom: 3rem;
             }
             & p {
                 text-align: center;
                 width: 100%;
+                margin-top: 2rem;
+                & b {
+                    font-family: urbane, sans-serif;
+                    font-size: 3rem;
+                }
+            }
+            
+            &-bd {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 3rem;
+                row-gap: 1rem;
+                // justify-content: space-between;
+                & p {
+                    text-align: center;
+                    // width: 100%;
+                    // margin-top: 2rem;
+                    & b {
+                        font-family: urbane, sans-serif;
+                        font-size: 3rem;
+                    }
+                }
+                @include respond(phone) {
+                    grid-template-columns: 1fr;
+                }
             }
             
             &-item {
-                margin-top: 2rem;
+                // margin-top: 2rem;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: 600;

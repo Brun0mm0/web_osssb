@@ -6,7 +6,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
-    padding: 3rem;
+    padding: 3rem 6rem;
     
     @include respond(phone) {
         padding: 0;
