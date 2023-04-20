@@ -1,17 +1,18 @@
 footer {
     padding: 3rem 6rem;
     height: 100vh;
-        @include respond(phone) {
-        padding: 1.5rem;
+        @include respond(tab-port) {
+        padding: 3rem;
         height: auto;
         }
+        @include respond(phone-small) {
+            padding: 0;
+        }
 
-    section {
-    border-radius: 3rem;
-    height: calc(100% - 3rem);
-    background-color: $azul-logo-claro;
-    // max-width: 140rem;
-    .footer {
+        .footer {
+        border-radius: 3rem;
+        height: calc(100% - 3rem);
+        background-color: $azul-logo-claro;
         height: 100%;
         max-width: 140rem;
         grid-template-columns: 1fr 1fr 0.3fr;
@@ -21,25 +22,56 @@ footer {
         gap: 4rem;
         row-gap: 8rem;
         bottom: 0;
-
-        @include respond(phone) {
+        
+        @include respond(tab-land) {
             max-width: 100%;
-            grid-template-columns: 1fr;
-            padding: 1.5rem;
+            grid-template-columns: repeat(2,1fr);
+            padding: 8rem 6rem;
             gap: auto;
-
+            
         };
-
-        & ~ div {
-            display: grid;
-            gap: 2rem;
-            @include respond(phone-small) {
-                gap: 4rem;
-            }
+        
+        @include respond(tab-port) {
+            grid-template-columns: 1fr 1fr;
         }
         
-        & span {
+        @include respond(tab-port) {
+            padding: 6rem;
+            grid-template-columns: 1fr;
+        }
+        @include respond(phone) {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            padding: 4rem 1rem;
+        }
+        @include respond(phone-small) {
+            border-radius: 0;
+            padding: 4rem 0;
+        }
+
+        &-item {
+            display: flex;
+            @include respond(tab-land) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        // & ~ div {
+        //     display: grid;
+        //     gap: 2rem;
+        //     @include respond(phone-small) {
+        //         gap: 4rem;
+        //     }
+        // }
+        
+        & span, i {
             vertical-align: middle;  
+
+            @include respond(phone) {
+                // display: none;
+            } 
         }
         
         & #links {
@@ -48,12 +80,13 @@ footer {
             grid-row: 3;
             
             & div {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
             @include respond(phone) {
-                // padding: 7rem 2rem 0 2rem;
-                padding: 0;
+                    // padding: 7rem 2rem 0 2rem;
+                padding: 3rem 0;
+                // padding: 0;
                 flex-direction: column;
                 gap: 7rem;
             }
@@ -63,7 +96,7 @@ footer {
             & img {
                 max-width: 20rem;
                 @include respond(phone) {
-                    max-width: 80%;
+                    max-width: 25rem;
                     justify-content: space-between;
                     margin: auto;
                 } 
@@ -98,20 +131,13 @@ footer {
     background-size:contain;
     background-repeat: no-repeat;
     
-    @include respond(tab-port) {
-        display: none
+    @include respond(tab-land) {
+        display: none;
+        grid-row: auto;
+        grid-column: auto;
     };
 }
 
-@include respond(tab-port) {
-    grid-template-columns: 1fr 1fr;
-}
-@include respond(phone) {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    gap: 5rem;
-}
 
 .symbol-none {
     @include respond(phone-small) {
@@ -120,4 +146,3 @@ footer {
 }
 }
 
-}

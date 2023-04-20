@@ -1,8 +1,9 @@
 .contactos {
+    padding: 6rem;
     margin-bottom: 4rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem 10rem;
 
     @include respond(phone) {
     grid-template-columns: 1fr;
@@ -11,6 +12,7 @@
 
 .item-map {
     justify-self: end;
+    grid-column: 3;
 
     @include respond(tab-port) {
         display: none;

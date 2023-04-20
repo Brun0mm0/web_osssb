@@ -44,9 +44,10 @@
         &-text {
             display: flex;
             flex-direction: column;
-            // height: 100%;
             justify-content: space-between;
             padding: 8rem 4rem;
+
+
             & h2 {
                 text-align: start;
                 color: $azul-logo;
@@ -58,9 +59,15 @@
                 text-align: center;
                 font-size: 2rem;
                 text-decoration: none;
-            }    
+            }
+            
+            @include respond(tab-port) {
+                padding: 4rem;
+            }
+            
             @include respond(phone) {
                 // padding: 0;
+                justify-content: space-around;
                 padding: 3rem 0 8rem 0;
 
                 & h2 {
