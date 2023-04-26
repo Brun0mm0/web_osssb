@@ -14,6 +14,14 @@
     transition: all 0.5s;
     z-index: 100;
 
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     background-color: $bg-body;
+    //     width: 100%;
+    //     height: 100%;
+    // }
+
     
     &__logo {
         width: 29rem;
@@ -37,6 +45,7 @@
     &__img {
         display: flex;
         align-items: center;
+        z-index: 1000;
         
         img {
             max-width: 100%;
@@ -174,13 +183,6 @@ nav {
         position: static;
     }
 
-    &::after {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        color: $bg-body;
-    }
 }
 
 .nav_list {
@@ -259,3 +261,29 @@ nav {
     border: 0.2rem $azul-logo;
     color: $azul-logo;
   }
+
+  .nav-background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-color: $bg-body;
+    // z-index: 1;
+    transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);
+
+    @include respond(tab-port) {
+        top: 4.5rem;
+        right: 4.5rem;
+    }
+
+    @include respond(phone) {
+        top: 3.5rem;
+        right: 3.5rem;
+    }
+}
+
+.expand {
+    transform: scale(80);
+}

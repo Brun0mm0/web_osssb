@@ -209,6 +209,52 @@ footer span, i {
     }
 }
 
+.planes {
+    & h3 {
+        text-transform: capitalize;
+        font-size: 4rem;
+    }
+    & table {
+        font-size: 1.5rem;
+    } 
+    & th {
+        text-transform: uppercase;
+    }
+    & td {
+        text-transform: capitalize;
+        &:nth-child(even) {
+            text-align: center;
+        }
+    }
+}
+
+// vanesa 3er piso
+
+.institucional {
+    & table {
+        font-size: 2rem;
+        text-align: center;
+        border-spacing: 3rem;
+        width: 100%;
+        @include respond(phone) {
+            border-spacing: 1rem;
+        }
+    }
+    & th {
+        background-color: $azul-logo-claro;
+        text-transform: capitalize;
+        padding: 0 2rem;
+        font-family: urbane, sans-serif;
+        font-size: 2rem;
+    }
+    & td {
+        text-transform: capitalize;
+        font-weight: 600;
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+}
+
 #direccion {
     font-size: 2.5rem;
     @include respond(phone-small) {

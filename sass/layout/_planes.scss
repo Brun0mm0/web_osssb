@@ -1,0 +1,59 @@
+.planes {
+    & table {
+        width: 100%;
+        border-spacing: 0.5rem;
+    }
+    & tr:nth-child(even) {
+        background-color: $azul-logo-claro;
+    }
+    & td {
+        padding: 0 1rem;
+    }
+    & th {
+        padding: 1rem 0;
+        background-color: $azul-logo;
+        &:nth-child(even) {
+            background-color: $verde-logo;
+        }
+    }
+    
+    &__encabezado {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 8rem 4rem 1rem 4rem;
+        
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+            padding: 2rem;
+        }
+        &-texto {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 4rem;
+        }
+        &-parrafo {
+            line-height: 1.8rem;
+        }
+
+        & p {
+            font-size: 1.5rem;
+        }
+        &-imagen {
+            justify-self: center;
+            align-self: center;
+            & img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    & hr {
+        margin: 5rem 20rem; 
+        color: #52B8E3;
+        @include respond(phone) {
+            display: none;
+        }
+    }
+}

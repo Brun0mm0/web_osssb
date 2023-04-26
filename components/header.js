@@ -16,7 +16,8 @@
       // Toggle open and close nav styles on click
       $('#nav-toggle').click(function() {
         // e.stopPropagation();
-        $('nav ul').slideToggle();
+        $('.nav-background').toggleClass('expand', 'fast')
+        $('nav ul').slideToggle('easy');
       });
       // Hamburger to X toggle
       $('#nav-toggle').on('click', function(e) {
